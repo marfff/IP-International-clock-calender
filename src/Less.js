@@ -4,6 +4,7 @@ const Less = (props) => {
 	// console.log("PROPS INTO LESS", props);
 	return (
 		<div className="less">
+			<h1>hELLO</h1>
 			<div className="lessinner">
 				<div className="extraleft">
 					<p class="headings">CURRENT TIME ZONE</p>

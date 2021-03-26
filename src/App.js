@@ -36,7 +36,15 @@ const App = (props) => {
 				<Quote timeInformation={timeInformation} />
 
 				<div className="time">
-					<h3 className="greeting">{timeInformation.greeting}</h3>
+					<h3 className="greeting">
+						<img
+							className="iconsun"
+							style={{ fill: "red" }}
+							src={timeInformation.iconUrl}
+						></img>
+						{timeInformation.greeting}
+					</h3>
+					{console.log(timeInformation.iconUrl)}
 					<h3 className="timedisplay">{timeInformation.time}</h3>
 					<h3 className="abb">{timeInformation.abb}</h3>
 					<h3 className="loc">{timeInformation.timezone}</h3>
@@ -46,7 +54,8 @@ const App = (props) => {
 					<h3>{timeInformation.timezone}</h3>
 				</div>
 
-				<button className="buttono"
+				<button
+					className="buttono"
 					onClick={(ev) => {
 						ev.preventDefault();
 						setShowMore(!showMore);
@@ -54,7 +63,8 @@ const App = (props) => {
 				>
 					MORE v
 				</button>
-				<button className="buttono"
+				<button
+					className="buttono"
 					onClick={(ev) => {
 						ev.preventDefault();
 						setDaylight(!isDaylight);
@@ -62,7 +72,7 @@ const App = (props) => {
 				>
 					Change Daylight
 				</button>
-				{showMore && (
+				{!showMore && (
 					<div className="extra">
 						<p>
 							<Less timeInformation={timeInformation} />

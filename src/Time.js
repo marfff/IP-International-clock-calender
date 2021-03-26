@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Time.css";
+import sun from "./images/desktop/icon-sun.svg";
+import moon from "./images/desktop/icon-moon.svg";
 
 let api_time = "https://worldtimeapi.org/api/ip";
 // let geo_time = "https://freegeoip.app";
@@ -13,6 +15,8 @@ const Time = (props) => {
 	const [timezone, setTimezone] = useState("");
 	const [error, setError] = useState("");
 	const [greeting, setGreeting] = useState("GOOD DAYY");
+	const [iconUrl, setIconUrl] = useState(sun);
+
 	// const [ip, setIp] = useState("");
 	// const [location, setLocation] = useState("");
 	// const [timezone, setTimezone] = useState("");
@@ -25,7 +29,7 @@ const Time = (props) => {
 			console.log(x);
 			setx(false);
 		}, 60000);
-		clearInterval()
+		clearInterval();
 	}, []);
 
 	console.log(x);
@@ -35,17 +39,22 @@ const Time = (props) => {
 		let hour = timer5.slice(0, 2);
 		if (hour > "12" && hour < "18") {
 			greeting1 = "GOOD AFTERNOON";
+			setIconUrl(sun);
 			return greeting1;
 		}
 		if (hour > "18" && hour < "23") {
 			greeting1 = "GOOD NIGHT";
+			setIconUrl(moon);
+			console.log("MOON",moon)
 			return greeting1;
 		}
 		if (hour < "12" && hour > "07") {
 			greeting1 = "GOOD MORNING";
+			setIconUrl(sun);
 			return greeting1;
 		} else {
 			greeting1 = "GOOD NIGHT";
+			setIconUrl(moon);
 		}
 		return greeting1;
 	};
@@ -92,6 +101,7 @@ const Time = (props) => {
 		timezone,
 		greeting,
 		x,
+		iconUrl,
 	};
 
 	// return (
