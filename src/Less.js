@@ -1,22 +1,41 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 
 const Less = (props) => {
-	// console.log("PROPS INTO LESS", props);
+	const [daycolor, setdaycolor] = useState("--grey");
+	const [daybackround, setdaybackground] = useState("white");
+
+	useEffect(() => {
+		if (props.isDayLight == true) {
+			setdaycolor("var(--nearblack)");
+			setdaybackground("var(--grey)");
+		} else if (props.isDayLight == false) {
+			setdaycolor("white");
+			setdaybackground("var(--nearblack)");
+		}
+	}, []);
+
 	return (
-		<div className="less">
-			<h1>hELLO</h1>
+		<div
+			className="less"
+			style={{ color: daycolor, backgroundColor: daybackround }}
+		>
 			<div className="lessinner">
 				<div className="extraleft">
-					<p class="headings">CURRENT TIME ZONE</p>
-					<p class="headings">DAY OF THE YEAR</p>
-					<p class="headings">DAY OF THE WEEK</p>
-					<p class="headings">WEEK NUMBER</p>
+					<p className="headings">CURRENT TIME ZONE</p>
+					<p className="headings">DAY OF THE YEAR</p>
+					<p className="headings">DAY OF THE WEEK</p>
+					<p className="headings">WEEK NUMBER</p>
 				</div>
 				<div className="extraright">
-					<p class="headings">{props.timeInformation.timezone}</p>
-					<p class="headings">{props.timeInformation.dayOfYear}</p>
-					<p class="headings">{props.timeInformation.day}</p>
-					<p class="headings">{props.timeInformation.weekNumber}</p>
+					<p className="headings">{props.timeInformation.timezone}</p>
+					<p className="headings">
+						{props.timeInformation.dayOfYear}
+					</p>
+					<p className="headings">{props.timeInformation.day}</p>
+					<p className="headings">
+						{props.timeInformation.weekNumber}
+					</p>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Time.css";
 import sun from "./images/desktop/icon-sun.svg";
 import moon from "./images/desktop/icon-moon.svg";
@@ -26,13 +26,13 @@ const Time = (props) => {
 	useEffect(() => {
 		setInterval(() => {
 			setx(x);
-			console.log(x);
+			// console.log(x);
 			setx(false);
 		}, 60000);
 		clearInterval();
 	}, []);
 
-	console.log(x);
+	// console.log(x);
 
 	let makeGreeting = (timer5) => {
 		let greeting1 = "";
@@ -45,7 +45,7 @@ const Time = (props) => {
 		if (hour > "18" && hour < "23") {
 			greeting1 = "GOOD NIGHT";
 			setIconUrl(moon);
-			console.log("MOON",moon)
+			// console.log("MOON",moon)
 			return greeting1;
 		}
 		if (hour < "12" && hour > "07") {
@@ -69,7 +69,7 @@ const Time = (props) => {
 				return res.json();
 			})
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				let timer = data.datetime
 					.toString()
 					.split("T")[1]

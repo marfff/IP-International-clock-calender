@@ -1,27 +1,18 @@
 @import url("https://fonts.gstatic.com");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
+:root {
+	--grey: rgba(255, 255, 255, 0.75);
+	--darkblack: rgba(0, 0, 0, 0.75);
+	--nearblack: #303030;
+}
+
 .App {
 	height: 100vh;
-
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
 	font-size: 1px;
-	color: orange;
-}
-
-/* .App-content {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 40px;
-} */
-
-.extra {
-	background-color: purple;
 }
 
 @media (min-width: 375px) {
@@ -30,62 +21,68 @@
 	}
 
 	.App-content {
-		/* align-items: flex-end; */
 		justify-content: center;
 	}
 }
 
 .less {
 	position: absolute;
-	background: rgba(255, 255, 255, 0.75);
-	backdrop-filter: blur(40.77px);
-	top: calc(50% - 28px / 2);
+	backdrop-filter: blur(25px);
+	backdrop-filter: brightness(20%);
+	backdrop-filter: contrast(12%);
+	bottom: calc(0% - 28px / 2);
 	width: 100%;
+	border-radius: 15px;
+	opacity: 0.9;
 }
 
 .lessinner {
+	position: relative;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: flex-end;
-	top: 70%;
 	min-width: 323px;
+	margin-left: 36px;
+	justify-content: space-between;
+	margin: 0px 56px;
 }
 
 .extraleft {
-	color: #303030;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	font-family: Inter;
 	font-size: 10px;
 	letter-spacing: 2px;
-	align-items: flex-end;
+	align-items: stretch;
 	line-height: 32px;
 	height: 300px;
 }
 
 .extraright {
-	color: #303030;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
 	font-family: Inter;
-	line-height: 18px;
+	line-height: 14px;
 	font-size: 20px;
 	font-weight: bold;
-	width: 50%;
 	height: 300px;
 }
 
-.headings {
+/* .headings {
 	display: flex;
 	justify-content: flex-end;
-}
+} */
 
 .quote {
 	position: relative;
 	top: calc(50% - 22px / 2 + 36.83px);
 	right: 75.62%;
 	left: 0%;
-	font-size: 14px;
+	font-size: 16px;
 	justify-content: flex-start;
 	line-height: 22px;
-	color: orange;
 	align-items: flex-end;
 	text-shadow: 0px 1px 1px #282828;
 	/* -webkit-text-stroke: 1px black; */
@@ -109,11 +106,26 @@
 	padding-top: 8px;
 }
 
+.time {
+	position: fixed;
+	top: 355px;
+	width: 100%;
+	left: 26px;
+}
+
+.time2 {
+	position: fixed;
+	width: 100%;
+	left: 26px;
+	top: 100px;
+}
+
 .greeting {
 	position: absolute;
 	height: 25px;
 	left: 5.2%;
 	right: 1.52%;
+	width: 250px;
 	top: calc(52% - 25px / 2);
 	color: white;
 	font-family: Inter;
@@ -121,7 +133,6 @@
 	font-weight: normal;
 	font-size: 15px;
 	line-height: 25px;
-	/* identical to box height, or 167% */
 	display: flex;
 	align-items: flex-end;
 	letter-spacing: 3px;
@@ -133,25 +144,42 @@
 	height: 100px;
 	left: 5.2%;
 	right: 12.23%;
-	top: calc(50% - 100px / 2 - 1.5px);
+	top: calc(50% - 100px / 2 - 1px);
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 100px;
+	line-height: 100px;
+	display: flex;
+	transition: 1s;
+	align-items: flex-end;
+	letter-spacing: -2.5px;
+	text-shadow: 0 0 0px grey, 0 0 1px grey, 0 0 0px grey, 0 0 1px grey;
+
+	color: #ffffff;
+}
+
+/* .timedisplay2 {
+	position: absolute;
+	height: 100px;
+	left: 5.2%;
+	right: 12.23%;
+	top: calc(20% - 100px / 2 - 1.5px);
 	font-family: Inter;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 100px;
 	line-height: 100px;
-	/* identical to box height, or 100% */
 	display: flex;
 	align-items: flex-end;
 	letter-spacing: -2.5px;
-
 	color: #ffffff;
-}
+} */
 
 .abb {
-	position: absolute;
+	position: relative;
 	height: 28px;
-	right: 25%;
-	top: calc(50% - 28px / 2 + 109.5px);
+	left: 20px;
 	font-family: Inter;
 	font-style: normal;
 	font-weight: 300;
@@ -169,7 +197,7 @@
 	height: 28px;
 	left: 5.2%;
 	right: 46.4%;
-	top: calc(50% - 28px / 2 + 150.5px);
+	top: calc(50% - 28px / 2 + 170.5px);
 	font-family: Inter;
 	font-style: normal;
 	font-weight: bold;
@@ -184,12 +212,82 @@
 	color: #ffffff;
 }
 
-.buttono {
-	position: relative;
-	top: -0px;
+.button1 {
+	display: flex;
+	position: absolute;
 	left: 5.2%;
+	top: 300px;
+	align-items: center;
+	height: 39px;
+	width: 115px;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 3.75px;
+	padding-left: 14px;
+	border-radius: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+	outline: none;
 }
 
-.iconsun{
-	padding-right:16px;
+.button1:hover {
+	opacity: 0.8;
+	transition: 1s;
+}
+
+/* .button1a {
+	display: flex;
+	position: absolute;
+	bottom: 55%;
+	left: 5.2%;
+	align-items: center;
+	height: 39px;
+	width: 115px;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 3.75px;
+	padding-left: 14px;
+	border-radius: 20px;
+	opacity: 0.5;
+	cursor: pointer;
+	outline: none;
+} */
+
+.button2 {
+	display: flex;
+	position: absolute;
+	color: grey;
+	top: -94px;
+	right: 10%;
+	margin-left: 28px;
+	align-items: center;
+	height: 10px;
+	font-weight: 100;
+	width: 160px;
+	font-weight: bold;
+	font-size: 10px;
+	letter-spacing: 3.75px;
+	padding: 8px;
+	border-radius: 20px;
+	opacity: 0.4;
+	cursor: pointer;
+	outline: none;
+}
+
+.button2:hover {
+	opacity: 0.8;
+	transition: 1s;
+}
+
+.iconsun {
+	padding-right: 16px;
+	fill: yellow !important;
+}
+
+.arrow {
+	position: absolute;
+	right: 4px;
+	height: 32px;
+	width: 32px;
+	transform: rotate(180deg);
 }

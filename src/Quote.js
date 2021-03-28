@@ -15,7 +15,7 @@ const Quote = (props) => {
 				// console.log("DATAquote", data);
 			});
 	}, [props.timeInformation.x]);
-	console.log("QUOTE DEP",props.timeInformation.x)
+	// console.log("QUOTE DEP",props.timeInformation.x)
 
 	let randomNo = Math.floor(Math.random() * 99);
 
