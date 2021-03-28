@@ -9,7 +9,6 @@ import mobileBackgNight from "./images/mobile/bg-image-nighttime.jpg";
 import desktopBackgNight from "./images/desktop/bg-image-nighttime.jpg";
 import uparrow from "./images/desktop/icon-arrow-up.svg";
 // import downarrow from "./images/desktop/arrow-down.svg";
-
 // let geo_time = "https://freegeoip.app";
 
 const App = (props) => {
