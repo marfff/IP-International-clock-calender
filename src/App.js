@@ -13,6 +13,7 @@ let geo_time = "https://freegeoip.app";
 let geo_time2 = "https://freegeoip.net/json";
 let ipgeo =
 	"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41";
+let arrowword = "LESS";
 
 const App = (props) => {
 	// console.log(props);
@@ -26,6 +27,7 @@ const App = (props) => {
 	const [error1, setError1] = useState("");
 	const [city, setcity] = useState("");
 	const [zip, setzip] = useState("");
+	const [arrowword, setarrowword] = useState ("");
 
 	const windowWidth = useWindowWidth();
 
@@ -36,6 +38,11 @@ const App = (props) => {
 			? setarrow({ transform: "rotate(180deg)" })
 			: setarrow({ transform: "rotate(0deg)" });
 	}, [showMore]);
+
+	useEffect(() => {
+	showMore === true ? setarrowword("MORE") : setarrowword("LESS");
+	}, [showMore]);
+
 	// console.log("arrow", arrow);
 
 	useEffect(() => {
@@ -113,7 +120,7 @@ const App = (props) => {
 					<h3>{timeInformation.timezone}</h3>
 
 					<button
-						className="button1"
+						className="button1" raised={true} color="gray"
 						style={{ cursor: "pointer" }}
 						onClick={(ev) => {
 							ev.preventDefault();
@@ -132,10 +139,10 @@ const App = (props) => {
 							src={uparrow}
 							alt="arrow"
 						></img>
-						MORE
+						{arrowword}
 					</button>
 					<button
-						className="button2"
+						className="button2" raised={true} color="gray"
 						onClick={(ev) => {
 							ev.preventDefault();
 							setDaylight(!isDaylight);

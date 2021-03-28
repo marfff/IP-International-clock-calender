@@ -36,12 +36,13 @@
 	width: 100%;
 	border-radius: 15px;
 	opacity: 0.9;
-	height: 20%;
+	height: 17%;
 }
 
 .lessinner {
-	position: absolute;
-	display:flex;
+	position: relative;
+	display: flex;
+	height: 100%;
 	flex-direction: row;
 	min-width: 323px;
 	margin-left: 36px;
@@ -51,27 +52,26 @@
 
 .extraleft {
 	display: flex;
+	position: absolute;
 	flex-direction: column;
 	justify-content: center;
 	font-family: Inter;
 	font-size: 10px;
 	letter-spacing: 2px;
 	align-items: stretch;
-	background:blue;
 }
 
 .extraright {
-	position: relative;
-	left: 250px;
+	position: absolute;
+	right:2px;
 	display: flex;
+	align-items:flex-end;
+	justify-content: space-between;
+	letter-spacing: 2px;
 	flex-direction: column;
-	align-items: flex-end;
-	justify-content: center;
 	font-family: Inter;
-	font-size: 20px;
+	font-size: 10px;
 	font-weight: bold;
-	background:orange;;
-	z-index: 10;
 }
 
 /* .headings {
