@@ -9,7 +9,10 @@ import mobileBackgNight from "./images/mobile/bg-image-nighttime.jpg";
 import desktopBackgNight from "./images/desktop/bg-image-nighttime.jpg";
 import uparrow from "./images/desktop/icon-arrow-up.svg";
 // import downarrow from "./images/desktop/arrow-down.svg";
-// let geo_time = "https://freegeoip.app";
+let geo_time = "https://freegeoip.app";
+let geo_time2 = "https://freegeoip.net/json";
+let ipgeo =
+	"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41";
 
 const App = (props) => {
 	// console.log(props);
@@ -21,6 +24,8 @@ const App = (props) => {
 	// console.log("morebutton", moreButton);
 	const [arrow, setarrow] = useState({ transform: "rotate(180deg)" });
 	const [error1, setError1] = useState("");
+	const [city, setcity] = useState("");
+	const [zip, setzip] = useState("");
 
 	const windowWidth = useWindowWidth();
 
@@ -48,28 +53,31 @@ const App = (props) => {
 	let data1 = "";
 	let data2 = "";
 
-	// if (error !== "") return;
-	// fetch(api_time, {
-	// 	method: "GET",
-	// 	cors: "no-cors",
-	// })
+	// useEffect(() => {
 
-	// 	useEffect((timenow = "") => {
+	// 	fetch(geo_time2)
+	// 	// 	{
+	// 	// 	method: "GET",
+	// 	// 	// cors: "no-cors",
+	// 	// }
+	// 	.then((res) => {
+	// 		return res.json();
+	// 	})
+	// 	.then((data1) => {
 
-	// 		fetch(geo_time, {
-	// 			method: "GET",
-	// 			cors: "no-cors",
-	// 		})
-	// 		.then((res) => {
-	// 			return res.json();
-	// 		})
-	// 		.then((data1) => {
-	//             timenow = data1.datetime.toString().split("T")[1].split(".")[0];
-	//             data2 = data1.datetime.toString().split("T")[1].split(".")[0];
+	// 	});
 
-	// 		});
-	// 	console.log("TIMENOW2", timenow);
 	// });
+
+	useEffect(() => {
+		fetch(ipgeo)
+			.then((response) => response.json())
+			.then((data3) => {
+				console.log(data3.city, data3.zipcode);
+				setcity(data3.city);
+				setzip(data3.zipcode);
+			});
+	}, []);
 
 	return (
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -88,10 +96,16 @@ const App = (props) => {
 					</h3>
 					<h3 className="timedisplay">{timeInformation.time}</h3>
 
-					<h3 className="loc">
-						{timeInformation.timezone}
-						<span className="abb">{timeInformation.abb}</span>
-					</h3>
+					<div className="loc">
+						<div>
+							<span>{timeInformation.timezone}</span>
+							<span className="abb">{timeInformation.abb}</span>
+						</div>
+						<div className="town">
+							<span className="town">{city}</span>
+							<span className="zip">{zip}</span>
+						</div>
+					</div>
 
 					<h3>{timeInformation.day}</h3>
 					<h3>{timeInformation.dayOfYear}</h3>

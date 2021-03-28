@@ -22,7 +22,7 @@ const Less = (props) => {
 		>
 			<div className="lessinner">
 				<div className="extraleft">
-					<p className="headings">CURRENT TIME ZONE</p>
+					<p className="headings">TIME ZONE</p>
 					<p className="headings">DAY OF THE YEAR</p>
 					<p className="headings">DAY OF THE WEEK</p>
 					<p className="headings">WEEK NUMBER</p>
