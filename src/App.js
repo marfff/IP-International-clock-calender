@@ -9,22 +9,20 @@ import mobileBackgNight from "./images/mobile/bg-image-nighttime.jpg";
 import desktopBackgNight from "./images/desktop/bg-image-nighttime.jpg";
 import uparrow from "./images/desktop/icon-arrow-up.svg";
 // import downarrow from "./images/desktop/arrow-down.svg";
-let geo_time = "https://freegeoip.app";
-let geo_time2 = "https://freegeoip.net/json";
+// let geo_time = "https://freegeoip.app";
+// let geo_time2 = "https://freegeoip.net/json";
 let ipgeo =
 	"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41";
-let arrowword = "LESS";
+// let arrowword = "LESS";
 
 const App = (props) => {
-	// console.log(props);
 	const [isDaylight, setDaylight] = useState(true);
 	const [imageUrl, setImageUrl] = useState("");
 	const [showMore, setShowMore] = useState("true");
 	const [timeClass, setTimeClass] = useState("timedisplay");
 	const [moreButton, setmoreButton] = useState("time");
-	// console.log("morebutton", moreButton);
 	const [arrow, setarrow] = useState({ transform: "rotate(180deg)" });
-	const [error1, setError1] = useState("");
+	// const [error1, setError1] = useState("");
 	const [city, setcity] = useState("");
 	const [zip, setzip] = useState("");
 	const [arrowword, setarrowword] = useState("");
@@ -34,10 +32,8 @@ const App = (props) => {
 	const [ipis, setipis] = useState("");
 	const [flag, setflag] = useState("");
 	const [telcode, settelcode] = useState("");
-	const [extra1, setextra1] = useState({});
-
+	// const [extra1, setextra1] = useState({});
 	const windowWidth = useWindowWidth();
-
 	const timeInformation = Time();
 
 	useEffect(() => {
@@ -45,6 +41,20 @@ const App = (props) => {
 			? setarrow({ transform: "rotate(180deg)" })
 			: setarrow({ transform: "rotate(0deg)" });
 	}, [showMore]);
+
+	useEffect(() => {
+		const daylightGreetings = [
+			"GOOD DAY",
+			"GOOD MORNING",
+			"GOOD AFTERNOON",
+		];
+
+		if (daylightGreetings.includes(timeInformation.greeting)) {
+			setDaylight(true);
+		} else {
+			setDaylight(false);
+		}
+	}, [timeInformation.greeting]);
 
 	useEffect(() => {
 		showMore === true ? setarrowword("MORE") : setarrowword("LESS");
@@ -64,14 +74,14 @@ const App = (props) => {
 		}
 	}, [windowWidth, isDaylight]);
 
-	let data1 = "";
-	let data2 = "";
+	// let data1 = "";
+	// let data2 = "";
 
 	useEffect(() => {
 		fetch(ipgeo)
 			.then((response) => response.json())
 			.then((data3) => {
-				console.log(data3);
+				// console.log(data3);
 				setcity(data3.city);
 				setzip(data3.zipcode);
 				setstateof(data3.state_prov);
@@ -82,20 +92,14 @@ const App = (props) => {
 				settelcode(data3.calling_code);
 			});
 	}, []);
-	// console.log("LARTT", latitude);
-	// useEffect(() => {
-	let extra4 = {
-	latitude: { latitude },
-	longitude: { longitude },
-	ipis: { ipis },
-	telcode: { telcode },
-	}
-console.log("EXRRAA4",extra4)
-	// let extra4 = { latitude7: { latitude } };
-	// console.log("EXTRA4",extra4.latitude7);
 
-	// }, []);
-	// console.log("LONGITUDE", longitude);
+	let extra4 = {
+		latitude: { latitude },
+		longitude: { longitude },
+		ipis: { ipis },
+		telcode: { telcode },
+	};
+	// console.log("EXRRAA4", extra4);
 
 	return (
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -179,7 +183,6 @@ console.log("EXRRAA4",extra4)
 								timeInformation={timeInformation}
 								isDayLight={isDaylight}
 								extra={extra4}
-								// latitude1={latitude}
 							/>
 						</div>
 					</div>
@@ -203,29 +206,5 @@ const useWindowWidth = () => {
 
 	return windowWidth;
 };
-// const Geo = () => {
-// 	const [error1, setError1] = useState("");
-// 	return (  );
-
-// const [error1, setError1] = useState("");
-// useEffect(() => {
-
-// 	if (error1 !== "") return;
-// 	fetch(geo_time, {
-// 		method: "GET",
-// 		cors: "no-cors",
-// 	})
-// 		.then((res) => {
-// 			return res.json();
-// 		})
-// 		.then((data) => {
-// 			console.log("CITY", data)
-// 		})
-// 		.catch((err) => {
-// 			setError1(err);
-// 			console.log("Error Reading data " + err);
-// 		});
-// }, []);
-// }
 
 export default App;

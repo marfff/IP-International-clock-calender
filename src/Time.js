@@ -6,7 +6,6 @@ import moon from "./images/desktop/icon-moon.svg";
 let api_time = "https://worldtimeapi.org/api/ip";
 // let geo_time = "https://freegeoip.app";
 
-
 const Time = (props) => {
 	const [time, setTime] = useState("16:00");
 	const [abb, setAbb] = useState("LOC");
@@ -25,13 +24,12 @@ const Time = (props) => {
 
 	//timer to limit api calling
 	useEffect(() => {
-		setInterval(() => {
-			setx(x);
-			// console.log(x);
-			setx(false);
-		}, 60000);
-		clearInterval();
-	}, []);
+		const interval = setInterval(() => {
+			setx(!x);
+		}, 20000);
+
+		return () => clearInterval(interval);
+	}, [x]);
 
 	let makeGreeting = (timer5) => {
 		let greeting1 = "";
@@ -104,4 +102,3 @@ const Time = (props) => {
 	};
 };
 export default Time;
-

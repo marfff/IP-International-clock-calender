@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Api from "./Api";
 import Quote from "./Quote";
-import Time from "./Time";
+// import Time from "./Time";
 import { DateTime } from "luxon";
 let dt = DateTime.now();
 const fulltime = dt.toLocaleString(DateTime.DATETIME_MED);

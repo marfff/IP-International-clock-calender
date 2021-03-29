@@ -4,17 +4,17 @@ import { useState, useEffect } from "react";
 const Less = (props) => {
 	const [daycolor, setdaycolor] = useState("--grey");
 	const [daybackround, setdaybackground] = useState("white");
-	console.log("INCPROPS", props);
+	// ("INCPROPS", props)console.log;
 
 	useEffect(() => {
-		if (props.isDayLight == true) {
+		if (props.isDayLight === true) {
 			setdaycolor("var(--nearblack)");
 			setdaybackground("var(--grey)");
-		} else if (props.isDayLight == false) {
+		} else if (props.isDayLight === false) {
 			setdaycolor("white");
 			setdaybackground("var(--nearblack)");
 		}
-	}, []);
+	}, [props.isDayLight]);
 
 	return (
 		<div
@@ -41,7 +41,7 @@ const Less = (props) => {
 					<p className="headings">
 						{props.timeInformation.weekNumber}
 					</p>
-					{console.log("HENRY",props.extra.latitude)}
+					{/* {console.log("HENRY",props.extra.latitude)} */}
 					<p className="headings">{ props.extra.latitude.latitude }</p>
 					<p className="headings">
 						{props.extra.longitude.longitude}</p>
