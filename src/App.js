@@ -27,7 +27,14 @@ const App = (props) => {
 	const [error1, setError1] = useState("");
 	const [city, setcity] = useState("");
 	const [zip, setzip] = useState("");
-	const [arrowword, setarrowword] = useState ("");
+	const [arrowword, setarrowword] = useState("");
+	const [stateof, setstateof] = useState("");
+	const [latitude, setlatitude] = useState("");
+	const [longitude, setlongitude] = useState("");
+	const [ipis, setipis] = useState("");
+	const [flag, setflag] = useState("");
+	const [telcode, settelcode] = useState("");
+	const [extra1, setextra1] = useState({});
 
 	const windowWidth = useWindowWidth();
 
@@ -40,7 +47,7 @@ const App = (props) => {
 	}, [showMore]);
 
 	useEffect(() => {
-	showMore === true ? setarrowword("MORE") : setarrowword("LESS");
+		showMore === true ? setarrowword("MORE") : setarrowword("LESS");
 	}, [showMore]);
 
 	// console.log("arrow", arrow);
@@ -60,31 +67,35 @@ const App = (props) => {
 	let data1 = "";
 	let data2 = "";
 
-	// useEffect(() => {
-
-	// 	fetch(geo_time2)
-	// 	// 	{
-	// 	// 	method: "GET",
-	// 	// 	// cors: "no-cors",
-	// 	// }
-	// 	.then((res) => {
-	// 		return res.json();
-	// 	})
-	// 	.then((data1) => {
-
-	// 	});
-
-	// });
-
 	useEffect(() => {
 		fetch(ipgeo)
 			.then((response) => response.json())
 			.then((data3) => {
-				console.log(data3.city, data3.zipcode);
+				console.log(data3);
 				setcity(data3.city);
 				setzip(data3.zipcode);
+				setstateof(data3.state_prov);
+				setflag(data3.country_flag);
+				setlatitude(data3.latitude);
+				setlongitude(data3.longitude);
+				setipis(data3.ip);
+				settelcode(data3.calling_code);
 			});
 	}, []);
+	// console.log("LARTT", latitude);
+	// useEffect(() => {
+	let extra4 = {
+	latitude: { latitude },
+	longitude: { longitude },
+	ipis: { ipis },
+	telcode: { telcode },
+	}
+console.log("EXRRAA4",extra4)
+	// let extra4 = { latitude7: { latitude } };
+	// console.log("EXTRA4",extra4.latitude7);
+
+	// }, []);
+	// console.log("LONGITUDE", longitude);
 
 	return (
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -105,12 +116,19 @@ const App = (props) => {
 
 					<div className="loc">
 						<div>
-							<span>{timeInformation.timezone}</span>
+							<span>{city}</span>
 							<span className="abb">{timeInformation.abb}</span>
 						</div>
 						<div className="town">
-							<span className="town">{city}</span>
+							<span className="town">{stateof}</span>
 							<span className="zip">{zip}</span>
+							<span>
+								<img
+									className="flag"
+									src={flag}
+									alt="flag"
+								></img>
+							</span>
 						</div>
 					</div>
 
@@ -120,7 +138,8 @@ const App = (props) => {
 					<h3>{timeInformation.timezone}</h3>
 
 					<button
-						className="button1" raised={true} color="gray"
+						className="button1"
+						color="gray"
 						style={{ cursor: "pointer" }}
 						onClick={(ev) => {
 							ev.preventDefault();
@@ -142,7 +161,8 @@ const App = (props) => {
 						{arrowword}
 					</button>
 					<button
-						className="button2" raised={true} color="gray"
+						className="button2"
+						color="gray"
 						onClick={(ev) => {
 							ev.preventDefault();
 							setDaylight(!isDaylight);
@@ -158,6 +178,8 @@ const App = (props) => {
 							<Less
 								timeInformation={timeInformation}
 								isDayLight={isDaylight}
+								extra={extra4}
+								// latitude1={latitude}
 							/>
 						</div>
 					</div>
