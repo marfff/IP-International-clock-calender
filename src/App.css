@@ -29,6 +29,7 @@
 .less {
 	position: absolute;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	backdrop-filter: blur(25px);
 	backdrop-filter: brightness(20%);
@@ -38,7 +39,7 @@
 	border-radius: 15px;
 	font-size: 8px;
 	opacity: 0.9;
-	height: 20%;
+	height: 30%;
 }
 
 .lessinner {
@@ -213,7 +214,7 @@
 	display: flex;
 	position: absolute;
 	left: 5.2%;
-	top: 300px;
+	top: 260px;
 	align-items: center;
 	height: 39px;
 	width: 115px;
