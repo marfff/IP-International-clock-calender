@@ -8,7 +8,6 @@
 }
 
 .App {
-
 	height: 100vh;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -37,9 +36,9 @@
 	bottom: 0px;
 	width: 100%;
 	border-radius: 15px;
-	font-size:8px;
+	font-size: 8px;
 	opacity: 0.9;
-	height: 30%;
+	height: 20%;
 }
 
 .lessinner {
@@ -49,6 +48,7 @@
 	flex-direction: row;
 	min-width: 323px;
 	margin-left: 36px;
+	align-items: center;
 	justify-content: space-between;
 	margin: 0px 32px;
 }
@@ -282,6 +282,6 @@
 	margin-right: 20px;
 }
 
-.headings{
+.headings {
 	line-height: 0%;
 }
