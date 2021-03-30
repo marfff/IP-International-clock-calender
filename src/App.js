@@ -136,20 +136,20 @@ const App = (props) => {
 	return (
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
 			<div className="App-content">
-			<button
-							className="button2"
-							color="gray"
-							onClick={(ev) => {
-								ev.preventDefault();
-								setDaylight(!isDaylight);
-							}}
-						>
-							Change Lighting
-						</button>
 				<Quote timeInformation={timeInformation} />
 				<div className="height1">
 					<div className={moreButton}>
 						<div className="greeting">
+							<button
+								className="button2"
+								color="gray"
+								onClick={(ev) => {
+									ev.preventDefault();
+									setDaylight(!isDaylight);
+								}}
+							>
+								Change Lighting
+							</button>
 							<img
 								className="iconsun"
 								style={{ fill: "red" }}
@@ -211,7 +211,6 @@ const App = (props) => {
 							></img>
 							{arrowword}
 						</button>
-						
 					</div>
 				</div>
 
