@@ -137,89 +137,90 @@ const App = (props) => {
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
 			<div className="App-content">
 				<Quote timeInformation={timeInformation} />
-
-				<div className={moreButton}>
-					<div className="greeting">
-						<img
-							className="iconsun"
-							style={{ fill: "red" }}
-							src={timeInformation.iconUrl}
-							alt="sun"
-						/>
-						<span className="greet">
-							{timeInformation.greeting}
-						</span>
-						<div className="weather">{weatherdesc}</div>
-					</div>
-					<h3 className="timedisplay">{timeInformation.time}</h3>
-
-					<div className="loc">
-						<div>
-							<span>{city}</span>
-							<span className="abb">{timeInformation.abb}</span>
-						</div>
-						<div className="town">
-							<span className="town">{stateof}</span>
-							<span className="zip">{zip}</span>
-							<span>
-								<img
-									className="flag"
-									src={flag}
-									alt="flag"
-								></img>
+				<div className="height1">
+					<div className={moreButton}>
+						<div className="greeting">
+							<img
+								className="iconsun"
+								style={{ fill: "red" }}
+								src={timeInformation.iconUrl}
+								alt="sun"
+							/>
+							<span className="greet">
+								{timeInformation.greeting}
 							</span>
+							<div className="weather">{weatherdesc}</div>
 						</div>
-					</div>
+						<h3 className="timedisplay">{timeInformation.time}</h3>
 
-					{/* <h3>{timeInformation.day}</h3>
+						<div className="loc">
+							<div>
+								<span>{city}</span>
+								<span className="abb">
+									{timeInformation.abb}
+								</span>
+							</div>
+							<div className="town">
+								<span className="town">{stateof}</span>
+								<span className="zip">{zip}</span>
+								<span>
+									<img
+										className="flag"
+										src={flag}
+										alt="flag"
+									></img>
+								</span>
+							</div>
+						</div>
+
+						{/* <h3>{timeInformation.day}</h3>
 					<h3>{timeInformation.dayOfYear}</h3>
 					<h3>{timeInformation.weekNumber}</h3>
 					<h3>{timeInformation.timezone}</h3> */}
 
-					<button
-						className="button1"
-						color="gray"
-						style={{ cursor: "pointer" }}
-						onClick={(ev) => {
-							ev.preventDefault();
-							setShowMore(!showMore);
-							timeClass === "timedisplay"
-								? setTimeClass("timedisplay2")
-								: setTimeClass("timedisplay");
-							moreButton === "time"
-								? setmoreButton("time2")
-								: setmoreButton("time");
-						}}
-					>
-						<img
-							className="arrow"
-							style={arrow}
-							src={uparrow}
-							alt="arrow"
-						></img>
-						{arrowword}
-					</button>
-					<button
-						className="button2"
-						color="gray"
-						onClick={(ev) => {
-							ev.preventDefault();
-							setDaylight(!isDaylight);
-						}}
-					>
-						Change Lighting
-					</button>
+						<button
+							className="button1"
+							color="gray"
+							style={{ cursor: "pointer" }}
+							onClick={(ev) => {
+								ev.preventDefault();
+								setShowMore(!showMore);
+								timeClass === "timedisplay"
+									? setTimeClass("timedisplay2")
+									: setTimeClass("timedisplay");
+								moreButton === "time"
+									? setmoreButton("time2")
+									: setmoreButton("time");
+							}}
+						>
+							<img
+								className="arrow"
+								style={arrow}
+								src={uparrow}
+								alt="arrow"
+							></img>
+							{arrowword}
+						</button>
+						<button
+							className="button2"
+							color="gray"
+							onClick={(ev) => {
+								ev.preventDefault();
+								setDaylight(!isDaylight);
+							}}
+						>
+							Change Lighting
+						</button>
+					</div>
 				</div>
 
 				{!showMore && (
 					<div className="extra">
-						<div>
-							<Less
-								timeInformation={timeInformation}
-								isDayLight={isDaylight}
-								extra={extra4}
-							/>
-						</div>
+						<Less
+							timeInformation={timeInformation}
+							isDayLight={isDaylight}
+							extra={extra4}
+						/>
 					</div>
 				)}
 			</div>
