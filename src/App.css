@@ -40,7 +40,8 @@
 	font-size: 11px;
 	line-height: normal;
 	opacity: 0.9;
-	height: 27%;
+	height: 24%;
+	max-height:200px;
 	padding: 4px 4px;
 	line-height: 40%;
 }
