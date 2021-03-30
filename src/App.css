@@ -47,8 +47,9 @@
 	flex-direction: row;
 	min-width: 350px;
 	align-items: center;
-	margin: 10px 10px;
-	line-height: 0.1;
+	margin: 2px 5px;
+	line-height: 0;
+	height: fit-content;
 }
 
 .extraleft {
@@ -231,7 +232,7 @@
 	position: absolute;
 	left: 5.2%;
 	background-color: var(--grey);
-	top: 260px;
+	top: 252px;
 	align-items: center;
 	height: 39px;
 	width: 115px;
