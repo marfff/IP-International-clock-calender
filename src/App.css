@@ -39,7 +39,7 @@
 	font-size: 12px;
 	opacity: 0.9;
 	padding: 4px 4px;
-	top:73vh;
+	top: 63vh;
 }
 
 .lessinner {
@@ -48,7 +48,7 @@
 	min-width: 350px;
 	align-items: center;
 	margin: 10px 10px;
-	line-height:.1;
+	line-height: 0.1;
 }
 
 .extraleft {
@@ -57,7 +57,7 @@
 	justify-content: center;
 	letter-spacing: 3px;
 	align-items: stretch;
-	width:50%;
+	width: 50%;
 }
 
 .extraright {
@@ -68,7 +68,7 @@
 	letter-spacing: 3px;
 	flex-direction: column;
 	font-weight: bold;
-	width:50%;
+	width: 50%;
 }
 
 .quote {
