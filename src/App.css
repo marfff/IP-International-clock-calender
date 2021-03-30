@@ -28,7 +28,6 @@
 
 .less {
 	position: absolute;
-	display: flex;
 	width: 100%;
 	align-items: center;
 	flex-direction: column;
@@ -37,36 +36,31 @@
 	backdrop-filter: contrast(12%);
 	bottom: 0px;
 	border-radius: 15px;
-	font-size: 11px;
-	line-height: normal;
+	font-size: 12px;
 	opacity: 0.9;
-	height: 24%;
-	max-height:200px;
 	padding: 4px 4px;
-	line-height: 40%;
+	top:73vh;
 }
 
 .lessinner {
-	position: relative;
 	display: flex;
-	height: 100%;
 	flex-direction: row;
 	min-width: 350px;
 	align-items: center;
-	margin: 0px 0px;
+	margin: 10px 10px;
+	line-height:.1;
 }
 
 .extraleft {
 	display: flex;
-	position: absolute;
 	flex-direction: column;
 	justify-content: center;
 	letter-spacing: 3px;
 	align-items: stretch;
+	width:50%;
 }
 
 .extraright {
-	position: absolute;
 	right: 2px;
 	display: flex;
 	align-items: flex-end;
@@ -74,6 +68,7 @@
 	letter-spacing: 3px;
 	flex-direction: column;
 	font-weight: bold;
+	width:50%;
 }
 
 .quote {
