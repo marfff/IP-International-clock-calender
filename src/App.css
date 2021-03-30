@@ -23,7 +23,7 @@
 	position: absolute;
 	bottom: 2px;
 	display: flex;
-	margin: 3px 3px;
+	margin: 0px 3px;
 	align-items: center;
 	backdrop-filter: blur(25px);
 	backdrop-filter: brightness(20%);
@@ -31,11 +31,12 @@
 	border-radius: 15px;
 	font-size: 12px;
 	opacity: 0.9;
+	padding: 2px 7px;
 	width: 95%;
 	align-items: center;
 	line-height: 0;
-	padding:8px;
-	height: 27vh;
+	padding-right: 1px;
+	height: fit-content;
 }
 
 /* .lessinner {
@@ -100,7 +101,7 @@
 }
 
 .height1 {
-	display:flex;
+	display: flex;
 }
 
 .time {
@@ -112,11 +113,10 @@
 }
 
 .time2 {
-	display:flex;
 	position: fixed;
 	width: 100%;
 	left: 26px;
-	top: 12%;
+	top: 18%;
 	text-shadow: 1px 2px 1px #282828;
 }
 
