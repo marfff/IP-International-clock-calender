@@ -223,6 +223,9 @@ const App = (props) => {
 						/>
 					</div>
 				)}
+					<div className="date"> {timeInformation.mydate} </div>
+				
+				
 			</div>
 		</div>
 	);

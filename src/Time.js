@@ -5,7 +5,8 @@ import moon from "./images/desktop/icon-moon.svg";
 
 let api_time = "https://worldtimeapi.org/api/ip";
 // let geo_time = "https://freegeoip.app";
-
+const dato = "2021-03-30T22:26:48.628756+01:00";
+let mydate = new Date(dato).toString().slice(0, 15).toUpperCase();
 
 const Time = (props) => {
 	const [time, setTime] = useState("16:00");
@@ -17,6 +18,7 @@ const Time = (props) => {
 	const [error, setError] = useState("");
 	const [greeting, setGreeting] = useState("GOOD DAY");
 	const [iconUrl, setIconUrl] = useState(sun);
+	const [date, setDate] = useState("Tue Mar 30 2021");
 
 	// const [ip, setIp] = useState("");
 	// const [location, setLocation] = useState("");
@@ -67,7 +69,7 @@ const Time = (props) => {
 				return res.json();
 			})
 			.then((data) => {
-				// console.log(data);
+				console.log(data);
 				let timer = data.datetime
 					.toString()
 					.split("T")[1]
@@ -83,13 +85,13 @@ const Time = (props) => {
 				setWeekNumber(data.week_number);
 				setTimezone(data.timezone);
 				setGreeting(makeGreeting(timer5));
+				setDate(mydate);
 			})
 			.catch((err) => {
 				setError(err);
 				console.log("Error Reading data " + err);
 			});
-		
-	}, [x,error]);
+	}, [x, error]);
 
 	return {
 		time,
@@ -101,6 +103,7 @@ const Time = (props) => {
 		greeting,
 		x,
 		iconUrl,
+		mydate,
 	};
 };
 export default Time;
