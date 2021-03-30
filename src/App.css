@@ -157,7 +157,7 @@
 	height: 100px;
 	left: 26px;
 	right: 12.23%;
-	top: calc(10% - 100px / 2 - 1px);
+	top: calc(10% - 80px / 2 - 1px);
 	font-family: Inter;
 	font-style: normal;
 	font-weight: bolder;
@@ -294,7 +294,7 @@
 	margin-right: 20px;
 }
 
-@media (min-width: 375px) {
+@media (min-width:375px) and (height:667px) {
 	.App {
 		background-position: center center;
 	}
