@@ -42,15 +42,17 @@ const Less = (props) => {
 						{props.timeInformation.weekNumber}
 					</p>
 					{/* {console.log("HENRY",props.extra.latitude)} */}
-					<p className="headings">{ props.extra.latitude.latitude }</p>
+					<p className="headings">{props.extra.latitude.latitude}</p>
 					<p className="headings">
-						{props.extra.longitude.longitude}</p>
-					 <p className="headings">{props.extra.ipis.ipis}</p>
+						{props.extra.longitude.longitude}
+					</p>
+					<p className="headings">{props.extra.ipis.ipis}</p>
 					<p className="headings">
 						{props.extra.telcode.telcode}
 					</p>{" "}
 				</div>
 			</div>
+			<div class="footer"></div>
 		</div>
 	);
 };

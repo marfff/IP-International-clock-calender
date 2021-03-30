@@ -72,6 +72,15 @@
 	width: 50%;
 }
 
+.footer {
+	height: 15vh;
+	backdrop-filter: blur(25px);
+	backdrop-filter: brightness(20%);
+	backdrop-filter: contrast(12%);
+	bottom: 0px;
+	background-color: black;
+}
+
 .quote {
 	position: relative;
 	top: calc(50% - 20px / 2 + 40px);
