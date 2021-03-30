@@ -6,6 +6,7 @@ import moon from "./images/desktop/icon-moon.svg";
 let api_time = "https://worldtimeapi.org/api/ip";
 // let geo_time = "https://freegeoip.app";
 
+
 const Time = (props) => {
 	const [time, setTime] = useState("16:00");
 	const [abb, setAbb] = useState("LOC");
@@ -87,7 +88,8 @@ const Time = (props) => {
 				setError(err);
 				console.log("Error Reading data " + err);
 			});
-	}, [x]);
+		
+	}, [x,error]);
 
 	return {
 		time,

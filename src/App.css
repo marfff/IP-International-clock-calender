@@ -29,17 +29,20 @@
 .less {
 	position: absolute;
 	display: flex;
+	width: 100%;
 	align-items: center;
 	flex-direction: column;
 	backdrop-filter: blur(25px);
 	backdrop-filter: brightness(20%);
 	backdrop-filter: contrast(12%);
 	bottom: 0px;
-	width: 100%;
 	border-radius: 15px;
-	font-size: 8px;
+	font-size: 11px;
+	line-height: normal;
 	opacity: 0.9;
 	height: 27%;
+	padding: 4px 4px;
+	line-height:60%;
 }
 
 .lessinner {
@@ -47,11 +50,9 @@
 	display: flex;
 	height: 100%;
 	flex-direction: row;
-	min-width: 323px;
-	margin-left: 36px;
+	min-width: 350px;
 	align-items: center;
-	justify-content: space-between;
-	margin: 0px 32px;
+	margin: 0px 0px;
 }
 
 .extraleft {
@@ -59,7 +60,7 @@
 	position: absolute;
 	flex-direction: column;
 	justify-content: center;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	align-items: stretch;
 }
 
@@ -69,7 +70,7 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	flex-direction: column;
 	font-weight: bold;
 }
@@ -78,7 +79,7 @@
 	position: relative;
 	top: calc(50% - 22px / 2 + 36.83px);
 	right: 75.62%;
-	left: 0%;
+	left: 26px;
 	font-size: 16px;
 	justify-content: flex-start;
 	line-height: 22px;
@@ -86,7 +87,7 @@
 	text-shadow: 0px 1px 1px #282828;
 	/* -webkit-text-stroke: 1px black; */
 	-webkit-text-fill-color: white;
-	margin-left: 26px;
+	margin-left: 28px;
 	padding-top: 32px;
 	font-weight: 500;
 }
@@ -101,7 +102,7 @@
 	text-shadow: 0px 1px 1px #282828;
 	/* -webkit-text-stroke: 1px black; */
 	-webkit-text-fill-color: white;
-	margin-left: 26px;
+	margin-left: 59px;
 	padding-top: 8px;
 }
 
@@ -119,29 +120,47 @@
 	top: 100px;
 }
 
+.iconsun {
+	padding-right: 20px;
+}
+
 .greeting {
-	position: absolute;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
 	height: 25px;
-	left: 5.2%;
-	right: 1.52%;
-	width: 250px;
+	left: 26px;
+	justify-content: space-between;
 	top: calc(52% - 25px / 2);
 	color: white;
+	width: 80%;
 	font-family: Inter;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 15px;
 	line-height: 25px;
-	display: flex;
-	align-items: flex-end;
+	margin-right: 27px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
+}
+
+.greet {
+	position: absolute;
+	left: 40px;
+	padding-left: 0px;
+	top: calc(52% - 25px / 2);
+}
+
+.weather {
+	position: relative;
+	font-weight: normal;
+	padding: 5px;
 }
 
 .timedisplay {
 	position: absolute;
 	height: 100px;
-	left: 5.2%;
+	left: 26px;
 	right: 12.23%;
 	top: calc(50% - 100px / 2 - 1px);
 	font-family: Inter;
@@ -175,10 +194,11 @@
 
 .loc {
 	display: flex;
+	user-select: none;
 	position: absolute;
 	flex-direction: column;
 	height: 28px;
-	left: 5.2%;
+	left: 26px;
 	top: calc(80% / 2 + 170.5px);
 	font-family: Inter;
 	font-style: normal;
@@ -195,7 +215,7 @@
 	height: 28px;
 	left: 5.2%;
 	right: 46.4%;
-	margin-top: 10px;
+	margin-top: 8px;
 	top: calc(50% - 28px / 2 + 170.5px);
 	font-family: Inter;
 	font-style: normal;
@@ -214,6 +234,7 @@
 	display: flex;
 	position: absolute;
 	left: 5.2%;
+	background-color: var(--grey);
 	top: 260px;
 	align-items: center;
 	height: 39px;
@@ -236,11 +257,13 @@
 .flag {
 	width: 30px;
 	height: 20px;
+	margin-bottom: -5px;
 }
 
 .button2 {
 	display: flex;
 	position: absolute;
+	background-color: var(--grey);
 	color: grey;
 	top: -94px;
 	right: 10%;
@@ -264,12 +287,6 @@
 	transition: 0.5s;
 }
 
-.iconsun {
-	padding-right: 20px;
-	fill: yellow !important;
-	margin-left: 4px;
-}
-
 .arrow {
 	position: absolute;
 	right: 4px;
@@ -281,8 +298,4 @@
 .zip {
 	margin-left: 20px;
 	margin-right: 20px;
-}
-
-.headings {
-	line-height: 0%;
 }

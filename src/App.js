@@ -12,8 +12,7 @@ import uparrow from "./images/desktop/icon-arrow-up.svg";
 // let geo_time = "https://freegeoip.app";
 // let geo_time2 = "https://freegeoip.net/json";
 let ipgeo =
-	"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41";
-// let arrowword = "LESS";
+	"https://api.ipgeolocation.io/ipgeo?apiKey=0f6d2831fba64e428c27b1bad0aa7b74";
 
 const App = (props) => {
 	const [isDaylight, setDaylight] = useState(true);
@@ -35,6 +34,9 @@ const App = (props) => {
 	// const [extra1, setextra1] = useState({});
 	const windowWidth = useWindowWidth();
 	const timeInformation = Time();
+	const [apilatitude, setapilatitude] = useState("25.0");
+	const [apilongitude, setapilongitude] = useState("51.0");
+	const [weatherdesc, setweatherdesc] = useState("CLOUDY IT IS");
 
 	useEffect(() => {
 		showMore === true
@@ -99,7 +101,35 @@ const App = (props) => {
 		ipis: { ipis },
 		telcode: { telcode },
 	};
-	// console.log("EXRRAA4", extra4);
+	useEffect(() => {
+		setapilatitude(latitude);
+		setapilongitude(longitude);
+	}, [ipis]);
+
+	let getWeather = () => {
+		fetch(
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${apilatitude}&lon=${apilongitude}&exclude=daily&appid=c60f10b5181836e23315494bb81bb16e`
+		)
+			.then((response) => {
+				if (response.status >= 200 && response.status <= 299) {
+					return response.json();
+				} else {
+					throw Error(response.statusText);
+				}
+			})
+			.then((data4) => {
+				setweatherdesc(data4.hourly[4].weather[0].description);
+				console.log("object", data4.hourly[4].weather[0].description);
+			})
+			.catch((error) => {
+				// Handle the error
+				console.log(error);
+			});
+	};
+
+	useEffect(() => {
+		console.log(getWeather());
+	}, [apilatitude]);
 
 	return (
 		<div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -107,15 +137,18 @@ const App = (props) => {
 				<Quote timeInformation={timeInformation} />
 
 				<div className={moreButton}>
-					<h3 className="greeting">
+					<div className="greeting">
 						<img
 							className="iconsun"
 							style={{ fill: "red" }}
 							src={timeInformation.iconUrl}
 							alt="sun"
-						></img>
-						{timeInformation.greeting}
-					</h3>
+						/>
+						<span className="greet">
+							{timeInformation.greeting}
+						</span>
+						<div className="weather">{weatherdesc}</div>
+					</div>
 					<h3 className="timedisplay">{timeInformation.time}</h3>
 
 					<div className="loc">
