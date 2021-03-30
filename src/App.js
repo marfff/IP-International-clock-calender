@@ -118,8 +118,10 @@ const App = (props) => {
 				}
 			})
 			.then((data4) => {
-				setweatherdesc(data4.hourly[4].weather[0].description);
-				console.log("object", data4.hourly[4].weather[0].description);
+				setweatherdesc(
+					`${data4.hourly[4].weather[0].description} LATER`
+				);
+				// console.log("object", data4.hourly[4].weather[0].description);
 			})
 			.catch((error) => {
 				// Handle the error
@@ -169,10 +171,10 @@ const App = (props) => {
 						</div>
 					</div>
 
-					<h3>{timeInformation.day}</h3>
+					{/* <h3>{timeInformation.day}</h3>
 					<h3>{timeInformation.dayOfYear}</h3>
 					<h3>{timeInformation.weekNumber}</h3>
-					<h3>{timeInformation.timezone}</h3>
+					<h3>{timeInformation.timezone}</h3> */}
 
 					<button
 						className="button1"
