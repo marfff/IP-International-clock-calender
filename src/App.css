@@ -297,5 +297,6 @@
 @media (min-width:375px) and (height:667px) {
 	.App {
 		background-position: center center;
+		height:667px;
 	}
 }
