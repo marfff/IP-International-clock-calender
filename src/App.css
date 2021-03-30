@@ -42,7 +42,7 @@
 	opacity: 0.9;
 	height: 27%;
 	padding: 4px 4px;
-	line-height:60%;
+	line-height: 40%;
 }
 
 .lessinner {
@@ -77,12 +77,12 @@
 
 .quote {
 	position: relative;
-	top: calc(50% - 22px / 2 + 36.83px);
+	top: calc(50% - 20px / 2 + 40px);
 	right: 75.62%;
 	left: 26px;
 	font-size: 16px;
 	justify-content: flex-start;
-	line-height: 22px;
+	line-height: 18px;
 	align-items: flex-end;
 	text-shadow: 0px 1px 1px #282828;
 	/* -webkit-text-stroke: 1px black; */
@@ -131,7 +131,7 @@
 	height: 25px;
 	left: 26px;
 	justify-content: space-between;
-	top: calc(52% - 25px / 2);
+	top: calc(48% - 25px / 2);
 	color: white;
 	width: 80%;
 	font-family: Inter;
