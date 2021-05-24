@@ -9,13 +9,13 @@ const fulltime = dt.toLocaleString(DateTime.DATETIME_MED);
 const red = dt.toHTTP();
 const twenty = dt.toLocaleString(DateTime.TIME_SIMPLE);
 const twentysec = dt.toLocaleString(DateTime.TIME_WITH_SECONDS);
-console.log("24", twenty);
-console.log("24sec", twentysec);
-console.log("RED", red);
+// console.log("24", twenty);
+// console.log("24sec", twentysec);
+// console.log("RED", red);
 let now = DateTime.now();
 let later = DateTime.local(2020, 10, 12);
 console.log("FULLTIME", fulltime, now, later);
-
+console.log("dt",dt)
 function App() {
 	const url =
 		"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41&ip=82.4.16.6";
@@ -27,7 +27,7 @@ function App() {
 
 	const timezone = "America/New_York";
 	const [time, setTime] = useState(DateTime.local().setZone(timezone));
-	// console.log("T I M E", time);
+	console.log("T I M E", time);
 
 	const LocalTime = (timezone) => {
 		setInterval(() => {
@@ -105,7 +105,7 @@ function App() {
 
 					<hr />
 					<Quote />
-					<Time />
+					 
 				</div>
 			)}
 		</div>
