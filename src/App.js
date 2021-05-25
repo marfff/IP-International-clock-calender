@@ -4,10 +4,12 @@ import './App.css';
 import Time from './Time';
 import Quote from './Quote';
 import Less from './Less';
-import mobileBackgDay from './images/mobile/bg-image-daytime.jpg';
-import desktopBackgDay from './images/desktop/bg-image-daytime.jpg';
-import mobileBackgNight from './images/mobile/bg-image-nighttime.jpg';
-import desktopBackgNight from './images/desktop/bg-image-nighttime.jpg';
+import mobileBackgDay from './images/mobile/IMG_3414.jpg';
+import desktopBackgDay from './images/desktop/IMG_3414.jpg';
+import desktopBackgNight from './images/desktop/Hubble2.jpg';
+// import mobileBackgNight from './images/mobile/bg-image-nighttime.jpg';
+import mobileBackgNight from './images/mobile/Hubble2.jpg';
+// import desktopBackgNight from './images/desktop/bg-image-nighttime.jpg';
 import uparrow from './images/desktop/icon-arrow-up.svg';
 let ipgeo =
   'https://api.ipgeolocation.io/ipgeo?apiKey=0f6d2831fba64e428c27b1bad0aa7b74';
