@@ -4,8 +4,6 @@ import sun from './images/desktop/icon-sun.svg';
 import moon from './images/desktop/icon-moon.svg';
 
 let api_time = 'http://worldtimeapi.org/api/ip';
-const dato = '2021-03-30T22:26:48.628756+01:00';
-let mydate = new Date(dato).toString().slice(0, 15).toUpperCase();
 
 const Time = () => {
   const [time, setTime] = useState('16:00');
@@ -99,7 +97,6 @@ const Time = () => {
     greeting,
     x,
     iconUrl,
-    mydate,
     date,
   };
 };
