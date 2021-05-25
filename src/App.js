@@ -9,9 +9,6 @@ import desktopBackgDay from './images/desktop/bg-image-daytime.jpg';
 import mobileBackgNight from './images/mobile/bg-image-nighttime.jpg';
 import desktopBackgNight from './images/desktop/bg-image-nighttime.jpg';
 import uparrow from './images/desktop/icon-arrow-up.svg';
-// import downarrow from "./images/desktop/arrow-down.svg";
-// let geo_time = "https://freegeoip.app";
-// let geo_time2 = "https://freegeoip.net/json";
 let ipgeo =
   'https://api.ipgeolocation.io/ipgeo?apiKey=0f6d2831fba64e428c27b1bad0aa7b74';
 
@@ -142,7 +139,7 @@ const App = (props) => {
                   ev.preventDefault();
                   setDaylight(!isDaylight);
                 }}>
-                Alter Lighting
+                Change Lighting
               </button>
               <img
                 className='iconsun'

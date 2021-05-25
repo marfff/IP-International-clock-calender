@@ -2,20 +2,8 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Api from "./Api";
 import Quote from "./Quote";
-// import Time from "./Time";
-import { DateTime } from "luxon";
-let dt = DateTime.now();
-const fulltime = dt.toLocaleString(DateTime.DATETIME_MED);
-const red = dt.toHTTP();
-const twenty = dt.toLocaleString(DateTime.TIME_SIMPLE);
-const twentysec = dt.toLocaleString(DateTime.TIME_WITH_SECONDS);
-// console.log("24", twenty);
-// console.log("24sec", twentysec);
-// console.log("RED", red);
 let now = DateTime.now();
 let later = DateTime.local(2020, 10, 12);
-console.log("FULLTIME", fulltime, now, later);
-console.log("dt",dt)
 function App() {
 	const url =
 		"https://api.ipgeolocation.io/ipgeo?apiKey=3172fe940fa243738d856ffabc3e5d41&ip=82.4.16.6";
@@ -113,13 +101,3 @@ function App() {
 }
 
 export default App;
-
-// , it's currently in More Less Current timezone Day of the year Day of
-// the week Week number
-
-// console.log("NOW", now, now.c.hour, now.c.minute, now.zoneName);
-// let rezoned = now.setZone("America/Los_Angeles");
-// console.log("rezoneLA", rezoned.toString());
-// rezoned.c.hour, rezoned.c.minute)
-
-// var now = DateTime.local().setZone("America/New_York");
