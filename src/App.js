@@ -142,7 +142,7 @@ const App = (props) => {
                   ev.preventDefault();
                   setDaylight(!isDaylight);
                 }}>
-                Change Lighting
+                Alter Lighting
               </button>
               <img
                 className='iconsun'
