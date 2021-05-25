@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 const url1 = "https://type.fit/api/quotes";
 // const url1 = 'https://servermd.herokuapp.com/api';
-var cors = require('cors');
+// var cors = require('cors');
 
 const Quote = (props) => {
   // console.log("QUOTEPROPS", props);
@@ -10,10 +10,12 @@ const Quote = (props) => {
 
   useEffect(() => {
     fetch(url1
-      ,{
-        method: 'GET',
-        cors: 'no-cors',
-      })
+      // ,
+      // {
+      //   method: 'GET',
+      //   cors: 'no-cors',
+      // }
+    )
 
         .then((res) => {
           return res.json();
