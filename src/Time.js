@@ -3,7 +3,7 @@ import './Time.css';
 import sun from './images/desktop/icon-sun.svg';
 import moon from './images/desktop/icon-moon.svg';
 
-let api_time = 'http://worldtimeapi.org/api/ip';
+let api_time = 'https://worldtimeapi.org/api/ip';
 
 const Time = () => {
   const [time, setTime] = useState('16:00');
